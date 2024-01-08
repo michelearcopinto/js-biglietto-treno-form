@@ -59,7 +59,7 @@ calcButton.addEventListener('click', function () {
             console.log(`Il prezzo del biglietto è: ${numeroFormattato} scontato del 40%`)
         };
 
-        // Aggiungere le informazioni al biglietto
+        // Aggiunta delle informazioni al biglietto e relativa comparsa
         showTicket.classList = "d-block"
         nomePasseggero.innerHTML = nameSurname.value;
         carrozza.innerHTML = numeroCasuale(1, 12);
@@ -69,7 +69,7 @@ calcButton.addEventListener('click', function () {
 
 });
 
-// Al click del bottone reset i campi vengono svuotati
+// Al click del bottone reset i campi vengono svuotati e il biglietto scompare
 resetButton.addEventListener('click', function () {
     nameSurname.value = '';
     kmToDo.value = '';
