@@ -20,8 +20,8 @@
             <div class="card shadow-lg mb-4">
                 <div class="card-body">
                     <h5 class="card-title">Inserisci i tuoi dati:</h5>
-                    <form>
-                        <div class="row g-3 justify-content-center">
+                    <form novalidate>
+                        <div class="row g-3 justify-content-center mb-3">
                             <div class="col-md-4">
                                 <label for="nameSurname" class="form-label colored-text fw-bold">Nome e Cognome:</label>
                                 <input type="text" class="form-control" id="nameSurname" required>
@@ -31,60 +31,54 @@
                                 <input type="number" class="form-control" id="kmToDo" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="kmToDo" class="form-label colored-text fw-bold">Fascia d'età:</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <label for="fasciaEta" class="form-label colored-text fw-bold">Fascia d'età:</label>
+                                <select id="fasciaEta" class="form-select" aria-label="age">
                                     <option selected>Seleziona una fascia</option>
-                                    <option value="1">Minorenne (0-17)</option>
-                                    <option value="2">Maggiorenne (18-65)</option>
-                                    <option value="3">Over (65+)</option>
+                                    <option value="1" id="junior">Minorenne (0-17)</option>
+                                    <option value="2" id="normal">Maggiorenne (18-65)</option>
+                                    <option value="3" id="over">Over (65+)</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="form-check mx-auto my-3">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                            <label class="form-check-label colored-text fw-bold" for="invalidCheck">
-                                Accetto i termini e le condizioni
-                            </label>
-                            <div class="invalid-feedback">
-                                You must agree before submitting.
-                            </div>
-                        </div>
-                        <button class="btn btn-secondary colored-text fw-bold">Genera</button>
-                        <button class="btn btn-secondary colored-text fw-bold" type="reset">Anulla</button>
                     </form>
+                    <button class="btn btn-secondary colored-text fw-bold" id="calcButton">Genera</button>
+                    <button class="btn btn-secondary colored-text fw-bold" id="resetButton">Anulla</button>
                 </div>
             </div>
         </div>
 
         <!-- Seconda card relativa al biglietto -->
-        <h1 class="text-white text-uppercase text-center fw-bold">il tuo biglietto</h1>
-        <div class="card shadow-lg">
-            <div class="card-body">
-                <h3 class="card-title text-uppercase">dettaglio passeggero:</h3>
-                <div class="d-flex flex-row justify-content-between border-secondary border-2 border-top border-bottom">
-                    <div class="bg-secondary px-3 pt-3 pb-5">
-                        <h4 class="text-uppercase fw-bold">nome passeggero</h4>
-                        <h5 class="text-capitalize fw-bold">john snow</h5>
-                    </div>
+        <div class="d-none" id="showTicket">
+            <h1 class="text-white text-uppercase text-center fw-bold">il tuo biglietto</h1>
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-uppercase">dettaglio passeggero:</h3>
+                    <div
+                        class="d-flex flex-row justify-content-between border-secondary border-2 border-top border-bottom">
+                        <div class="bg-secondary px-3 pt-3 pb-5">
+                            <h4 class="text-uppercase text-white fw-bold">nome passeggero</h4>
+                            <h5 class="text-capitalize text-white fw-bold" id="nomePasseggero"></h5>
+                        </div>
 
-                    <div class="py-3 d-flex flex-column justify-content-between">
-                        <h5 class="text-capitalize fw-bold">offerta</h5>
-                        <span class="text-capitalize fw-bold">biglietto standard</span>
-                    </div>
+                        <div class="py-3 d-flex flex-column justify-content-between">
+                            <h5 class="text-capitalize fw-bold">offerta</h5>
+                            <span class="text-capitalize fw-bold">biglietto standard</span>
+                        </div>
 
-                    <div class="py-3 d-flex flex-column justify-content-between">
-                        <h5 class="text-capitalize fw-bold">carrozza</h5>
-                        <span class="fw-bold"></span>
-                    </div>
+                        <div class="py-3 d-flex flex-column justify-content-between">
+                            <h5 class="text-capitalize fw-bold">carrozza</h5>
+                            <span class="fw-bold" id="carrozza"></span>
+                        </div>
 
-                    <div class="py-3 d-flex flex-column justify-content-between">
-                        <h5 class="fw-bold">Codice CP</h5>
-                        <span class="fw-bold"></span>
-                    </div>
+                        <div class="py-3 d-flex flex-column justify-content-between">
+                            <h5 class="fw-bold">Codice CP</h5>
+                            <span class="fw-bold" id="codiceCP"></span>
+                        </div>
 
-                    <div class="py-3 d-flex flex-column justify-content-between pe-5">
-                        <h5 class="fw-bold">Costo biglietto</h5>
-                        <span class="fw-bold"></span>
+                        <div class="py-3 d-flex flex-column justify-content-between pe-5">
+                            <h5 class="fw-bold">Costo biglietto</h5>
+                            <span class="fw-bold" id="costoBiglietto"></span>
+                        </div>
                     </div>
                 </div>
             </div>
