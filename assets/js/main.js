@@ -76,4 +76,3 @@ resetButton.addEventListener('click', function () {
     fasciaEtaSelect.value = valoreInizialeFasciaEta;
     showTicket.classList = "d-none"
 });
-
