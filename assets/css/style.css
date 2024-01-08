@@ -1,0 +1,17 @@
+.form-check {
+    width: fit-content;
+}
+
+.colored-text {
+    color: #B91450;
+}
+
+.btn-secondary {
+    background-color: rgba(127, 127, 127, 0.5);
+}
+
+.form-control,
+.btn-secondary,
+.form-select {
+    border-color: #B91450;
+}
